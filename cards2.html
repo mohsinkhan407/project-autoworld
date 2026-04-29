@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        #card {
+            border: 1px solid silver;
+            border-radius: 5px;
+            padding: 10px;
+            width: 500px;
+
+            display: flex;
+        }
+
+        .img-container img {
+            width: 180px;
+        }
+
+        .card-text {
+            padding-left: 10px;
+        }
+
+        .card-text h3{
+            margin: 0px;
+        }
+
+        .text {
+            display: flex;
+            justify-content: space-between ;
+        }
+
+        .price {
+            margin: 10px 0px;
+            display: inline-block;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+
+        let cars = [
+            {name: "Alto", city: "Karaci", price: 200000, img: "https://cache4.pakwheels.com/ad_pictures/1424/tn_suzuki-alto-vxl-2-2019-142461241.webp"},
+            {name: "Cultus", city: "Karaci", price: 250000, img: "https://cache1.pakwheels.com/ad_pictures/1424/tn_suzuki-cultus-vxri-euro-ii-2012-142412519.webp"},
+            {name: "City", city: "Peshawar", price: 600000, img: "https://cache3.pakwheels.com/ad_pictures/1424/tn_honda-city-aspire-prosmatec-2020-142458631.webp"},
+            {name: "Hilux", city: "Karaci", price: 700000, img: "https://cache1.pakwheels.com/ad_pictures/1424/tn_toyota-hilux-revo-v-automatic-2-8-2021-142443896.webp"}
+        ];
+
+        let container = document.getElementById("container");
+
+        cars.forEach(element => {
+            const elem = document.createElement("div");
+            elem.id = "card";
+
+            elem.innerHTML = `
+        <div class="img-container">
+            <img src=${element.img} alt="">
+        </div>
+        
+        <div class="card-text">
+            <h3>${element.name}</h3>
+            <h4>${element.city}</h4>
+
+            <div class="text">
+                <span>text1</span> |
+                <span>text2</span> |
+                <span>text3</span> |
+                <span>text4</span>
+            </div>
+
+            <h4 class="price">${element.price}</h4>
+            <a class="btn btn-primary" href="#" role="button">View Details</a>
+        </div>`;
+
+        container.appendChild(elem);
+        });
+
+        
+
+
+    </script>
+</body>
+</html>
